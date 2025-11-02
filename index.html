@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spend Aaz money</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  #money {
+    font-size: 2em;
+    color: green;
+  }
+
+  .item {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+  }
+
+  .item:hover {
+    background-color: #e0ffe0;
+  }
+
+  #message {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+</style>
+<body>
+    <h1>Spend Aaz money</h1>
+<p>You have $<span id="money">240000000000000000000000000000000000000000000000000000</span></p>
+
+<div class="item" onclick="buyItem(100000000)">Private Jet ($100M)</div>
+<div class="item" onclick="buyItem(44000000000)">Twitter ($44B)</div>
+<div class="item" onclick="buyItem(5000000000)">Mars Base ($5B)</div>
+<div class="item" onclick="buyItem(1000000000)">Island ($1B)</div>
+<div class="item" onclick="buyItem(19900000000)">jupiter base ($199B)</div>
+<div class="item" onclick="buyItem(99999999999)">personal mastered supercomputer ($999B)</div>
+<p id="message"></p>
+</body>
+ <script>
+  let money = 240000000000;
+
+  function buyItem(cost) {
+    if (money >= cost) {
+      money -= cost;
+      document.getElementById("money").textContent = money.toLocaleString();
+      document.getElementById("message").textContent = "";
+      if (money === 0) {
+        document.getElementById("message").textContent = "You spent it all! Aaz is broke! 🎉";
+      }
+    } else {
+      document.getElementById("message").textContent = "Not enough money!";
+    }
+  }
+</script>
+<html>
+   <img src="Aazfun.png" alt="Aaz.fun Logo" class="corner-logo">
+</html>
+<html>
+  <head>
+    <style>
+  .corner-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Change to right: 20px for top-right */
+    width: 120px;
+    z-index: 1000;
+  }
+</style>
+  </head>
+</html>
